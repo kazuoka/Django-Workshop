@@ -13,7 +13,7 @@ class Product(models.Model):
     slug=models.SlugField(max_length=255,unique=True)
     description=models.TextField(blank=True)
     price=models.DecimalField(max_digits=10,decimal_places=2)
-    Category=models.ForeignKey(Category,on_delete=models.CASCADE)
+    category=models.ForeignKey(Category,on_delete=models.CASCADE)
     image=models.ImageField(upload_to="product",blank=True)
     stock=models.IntegerField()
     available=models.BooleanField(default=True)
