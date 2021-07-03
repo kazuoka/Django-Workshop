@@ -8,6 +8,11 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta : 
+        ordering=('name',)
+        verbose_name='หมวดหมู่สินค้า'
+        verbose_name_plural='ข้อมูลประเภทสินค้า'
+
 class Product(models.Model):
     name=models.CharField(max_length=255,unique=True)
     slug=models.SlugField(max_length=255,unique=True)
@@ -19,3 +24,11 @@ class Product(models.Model):
     available=models.BooleanField(default=True)
     created=models.DateTimeField(auto_now_add=True)
     updated=models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta : 
+        ordering=('name',)
+        verbose_name='สินค้า'
+        verbose_name_plural='ข้อมูลสินค้า'
